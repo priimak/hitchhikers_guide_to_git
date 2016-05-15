@@ -79,9 +79,15 @@
         need to know inner workings of git. A few manuals try to talk about inner working of git first, but usually nobody
         reads those kinds of texts. Here we will try to take a middle approach. We will talk about high level commands and
         then immediately refer to what actually happens under the hood, i.e. to the plumbing. There is another impediment to
-        understanding git. And that is approach that some software developers, especially junior ones, take to the revision
-        control tools. In reality Git is a very simple and intuitive tool and you will think that way too once you
-        understand how it works.
+        understanding git. And that is a specific approach that some software developers, especially junior ones, take to
+        the revision control tools, which is that developers often interact with git not by choice but due to necessity.
+        Often in their minds eye they would like to see workings of revision control system to be completely invisible,
+        something that happens in the background. Such system do exists, just think of your editor that has unlimited undo
+        and replay actions, but they are very limited that very simplicity of unguided interaction that users sometimes
+        desire. Git takes completely different approach to recording revisions of the code you are working on. It requires
+        all interactions with the history to be explicit, be that recording new revision or modifying history itself.
+        This comes at the expense of some apparent complexity but in return you gain a lot of power. In reality git is a
+        very simple and intuitive tool and you will think that way too once you understand how it works.
 
         Book "Pro Git"\footnote{You can read "Pro Git" book online here https://progit.org/ and here
         https://git-scm.com/book/en/v2 or get a dead tree version at your local bookstore.} and manual pages are the final

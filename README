@@ -1,0 +1,9 @@
+This is a source code for book "Hitchhikers Guide to Git".
+
+To compile/generate it you need to have inkscape and lualatex tools.
+Once you have them you can just run make which will generate 
+following pdf of the book
+
+    target/hitchhikers_guide_to_git.pdf
+
+Run "make clean" to remove all transient files.

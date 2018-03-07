@@ -14,8 +14,8 @@
    height="330.03574"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="history-tree-index-committed.pdf">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="history-tree-index-committed.svg">
   <defs
      id="defs4">
     <marker
@@ -506,7 +506,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="437.18618"
+     inkscape:cx="379.60749"
      inkscape:cy="103.13973"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -539,7 +539,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -897,32 +897,6 @@
          x="491.07135"
          y="-62.9235"
          style="font-size:20px">Object Store</tspan></text>
-    <g
-       id="g10094-8"
-       transform="translate(351.92857,22.071415)">
-      <g
-         id="g8261-4"
-         transform="translate(-5,-1.484375e-6)">
-        <rect
-           style="fill:#ffa8a3;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect10088-4"
-           width="139.99998"
-           height="24.99999"
-           x="312.07144"
-           y="-69.709198" />
-        <text
-           xml:space="preserve"
-           style="font-size:12px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TlwgTypewriter;-inkscape-font-specification:TlwgTypewriter Bold"
-           x="322"
-           y="-54.637787"
-           id="text10090-7"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan10092-9"
-             x="322"
-             y="-54.637787">Quotes 247bf33...</tspan></text>
-      </g>
-    </g>
     <g
        id="g10094-8-6"
        transform="translate(522,22.000006)">

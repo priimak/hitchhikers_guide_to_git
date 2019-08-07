@@ -45,10 +45,13 @@
        \includegraphics[scale=0.4]{../../../target/images/giticon.pdf}
        \end{center}
        \newpage
+       \thispagestyle{empty}
        .
        \newpage
+       \thispagestyle{empty}
        \tableofcontents
        \newpage
+       \cleardoublepage
        \setcounter{page}{1}
        \section{Introduction}
         Git is a source control tool primarily used for maintaining history, i.e. revisions of the source code. Unlike CVS or
@@ -110,27 +113,28 @@
 
         \newpage
         \section{Work tree and its state}
-        At the highest level of abstraction git allows you to take a directory with some files in it and turn into
-        something akin to versioning file system. Then you can record state of your directory, also known as work tree.
-        You can then restore your work tree to any state that you have recorded in the past and even modify its
-        history. And as I already mentioned before, git does not get in your way if modifying history is what you are
-        after. What you track is actually files in the tree not directories and you have to explicitly specify that you
+        At the highest level of abstraction git allows you to take a directory with some files and turn it into
+        something akin to a versioning file system. You can then record state of files in the directory. This set of 
+        files is also known as a {\em work tree}.
+        You can restore a work tree to any state that you have recorded in the past and even modify its
+        history. And, as I already mentioned before, git does not get in your way if modifying history is what you are
+        after. Note that what you track are files in the tree, and not directories. You have to explicitly specify that you
         want to track state of any particular file. If you do not request git to track state of some file than git does
-        not know anything about it and if you delete it git will not help in restoring it. For the files for which git
-        tracks state situation is different. If you delete such file git will allow you to restore to any of its
+        not know anything about it, and if you delete it, git will not help in restoring it. For the files for which git
+        tracks state situation is different. If you delete such file git will allow you to restore it to any of its
         recorded states. Thus when git looks at the file it classifies it into one of three major categories
         \begin{enumerate}
                 \item Untracked - git knows nothing about this file.
                 \item Unmodified - git tracks state of this file and it is the same as the slice of history you are looking it.
                 \item Modified - git tacks this file and it is now different from what is recorded in git.
         \end{enumerate}
-        If you read other books you probably saw that there is another state for tracked files, which is {\em Staged}.
+        In other books on git you will encounter one more state called {\em Staged}.
         I do not list it here because it is in a way a form of {\em Modified} state. You will learn about it later when
         we will understand how git records new state of the work tree.
 
         \section{A bit of plumbing}
-        Git repository is contained in \texttt{.git/} directory at the top of the source code under control of the git. When
-        discussing higher abstraction git commands we will be immediately referring to files under \texttt{.git/} rather
+        Git repository is contained in \texttt{.git/} directory at the top of the source code that is under control of git. 
+        When discussing higher abstraction git commands we will be immediately referring to files under \texttt{.git/} rather
         than saying nothing about them.
 
         At a certain level of abstraction git is nothing else but a sequence of commits. Commit represents a state of the
@@ -141,7 +145,7 @@
             \item Set of files, each stored as a zlib compressed blob.
         \end{enumerate}
         All objects described above are stored in the files whose names are SHA1 hash values and when we say pointer to some
-        file or object that pointer is SHA1 hash value of corresponding object. These SHA1 hash values are computed based
+        file or object that pointer is SHA1 hash value of the corresponding object. These SHA1 hash values are computed based
         on content of the blobs. Therefore a commit object is also just a file with name that is its SHA1 hash. This allows one
         to form tree of objects like so.
 
@@ -176,8 +180,8 @@
         however common in the git world to speak of branch reference as the branch itself and in the simplest cases they do
         match with real branches as you find them in Mercurial but really these are two different things.
 
-        When repository is freshly initialized default branch (aka. branch reference) is created and it has name
-        \texttt{master}. Also cerated is ref \texttt{HEAD} which refers to the \texttt{master} as you can see in the
+        When repository is freshly initialized default branch (aka. branch reference), named \texttt{master}, is created. 
+        Also created is ref \texttt{HEAD} which refers to the \texttt{master} as you can see in the
         example on the following figure.
 
         \begin{figure}[h]
@@ -212,8 +216,8 @@
         any commits in your repository and therefore this file does not exist. File \texttt{refs/head/master} would contain
         SHA1 of the last commit and since we do not have any that ref does not exist either.
 
-        Before we will proceed with our first commit we will set some git parameters which will be used when making a
-        commit. As a matter of fact git will refuse to do commit unless commiter email and name are set. Following
+        Before we will proceed with our first commit we need to set some git parameters which will be used for making a
+        commit. Git will refuse to perform commit unless commiter email and name are set. Following
         commands will set these parameters for this repository only\footnote{You will find these and other parameters in
         the file \texttt{.git/config}}
 
@@ -347,7 +351,7 @@
  ?? speak.rb
         \end{Verbatim}
         This means exactly the same as what is shown above. Run "\texttt{git status --help}" to learn how to read this
-        abbreviated output. However we will continue using default long format of "\texttt{git status}" in our examples.
+        abbreviated output. We will, however, continue using default long format of "\texttt{git status}" in our examples.
         \newpage
 
         \noindent To see how your files differ from currently checked out commit you can use "\texttt{git diff}" command
@@ -366,7 +370,7 @@
         learn about index in the next chapter and will come back to see how "\texttt{git diff}" actually works, however in
         the state we find ourselves right now this is the same as difference between your modified files and how they
         were in the last commit. You can also launch external gui diff tool\footnote{This command will prompt with
-          graphical diff tool that it will find in the filesystem, this can \texttt{meld}, \texttt{tkdiff} etc.} from
+          graphical diff tool that it will find in the filesystem, this can be \texttt{meld}, \texttt{tkdiff} etc.} from
         the command like so:
 
         \begin{Verbatim}[frame=single]
@@ -1163,7 +1167,8 @@ Changes to be committed:
         \noindent This will have the same effect as removing commit \#4 from the history. We can accomplish that using
         command "\texttt{git rebase --onto}". We will use three arguments for this command even though the last one
         can be omitted as it is implied.
-
+        
+		\section{Interactive Rebase}
         \section{Cherry Picking}
         \section{Remotes}
         \section{Refspec}
